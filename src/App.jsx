@@ -1,12 +1,10 @@
 import "./App.css";
 import NewPlayerForm from "./assets/components/NewPlayerForm";
-
+import { useSelector } from "react-redux";
+import { playersSelector } from "./redux/playersSlice";
 function App() {
-  const players = [
-    { name: "LeBron James", number: 23 },
-    { name: "Michael Jordan", number: 23 },
-    { name: "Anfernee Simons", number: 1 },
-  ];
+  const players = useSelector(playersSelector);
+  console.log(players);
 
   return (
     <>

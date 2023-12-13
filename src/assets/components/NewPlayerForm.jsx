@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
+import { addPlayer } from "../../redux/playersSlice";
+
 export default function NewPlayerForm() {
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(addPlayer({ name: e.target.playerName.value, number: parseInt(e.target.number.value) }));
   };
   return (
     <form onSubmit={handleSubmit}>
