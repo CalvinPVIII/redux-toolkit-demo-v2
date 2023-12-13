@@ -9,11 +9,14 @@ const playersSlice = createSlice({
     addPlayer: (state, action) => {
       state.push(action.payload);
     },
+    removePlayer: (state, action) => {
+      return state.filter((player) => player.name !== action.payload);
+    },
   },
 });
 
 export default playersSlice.reducer;
 
-export const { addPlayer } = playersSlice.actions;
+export const { addPlayer, removePlayer } = playersSlice.actions;
 
 export const playersSelector = (state) => state.players;
