@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { playersSelector } from "./redux/playersSlice";
 function App() {
   const players = useSelector(playersSelector);
-  console.log(players);
 
   return (
     <>
